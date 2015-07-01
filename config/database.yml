@@ -9,7 +9,7 @@ default: &default
   pool: 5
   timeout: 5000
 
-postgresql:
+postgresql: &postgresql
   adapter: postgresql
   pool: 5
   timeout: 5000
