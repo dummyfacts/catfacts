@@ -6,7 +6,10 @@ class SmsController < ApplicationController
     SmsCandy::Authentication::Strategies.add :oauth2
     access_token = SmsCandy::Manager.authenticate
 
-    SmsCandy::Manager.send_sms("0400000000", "Cat Fact 1: Every year, nearly four million cats are eaten in Asia", access_token)
+    directory_id = Directory.all.map(&:id).sample
+    fact_id = Fact.all.map(&:id).sample
+
+    SmsCandy::Manager.send_sms(Directory.find(directory_id).number, Fact.find(fact_id).description, access_token)
 
     head :no_content
   end
