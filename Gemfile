@@ -1,16 +1,20 @@
 source 'https://rubygems.org'
 
-gem 'rails'
-gem 'sqlite3'
-gem 'sass-rails'
-gem 'uglifier'
 gem 'coffee-rails'
-gem 'jquery-rails'
 gem 'jbuilder'
+gem 'jquery-rails'
+gem 'rails'
+gem 'sass-rails'
 gem 'sms_candy'
+gem 'uglifier'
 
 group :development, :test do
- gem 'web-console'
- gem 'spring'
- gem 'rspec-rails'
+  gem 'rspec-rails'
+  gem 'spring'
+  gem 'sqlite3'
+  gem 'web-console'
+end
+
+group :production do
+  gem 'pg'
 end
