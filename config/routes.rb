@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :facts
   end
 
-  post 'sms' => 'sms#create'
+  if ENV['ENABLE_SMS_ROUTE']
+    post 'sms' => 'sms#create'
+  end
 
 end
